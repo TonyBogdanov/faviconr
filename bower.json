@@ -10,9 +10,13 @@
   "homepage": "",
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
-    "test",
-    "tests"
-  ]
+    "src",
+    "build.php"
+  ],
+  "devDependencies": {
+    "Aura.Autoload": "auraphp/Aura.Autoload#^2.0.3",
+    "console": "Symfony/console#^3.0.1",
+    "color-thief-php": "ksubileau/color-thief-php#^1.3.0"
+  }
 }
