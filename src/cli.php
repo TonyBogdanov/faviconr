@@ -3,14 +3,7 @@ if('cli' != php_sapi_name()) {
     return;
 }
 
-require_once(dirname(__FILE__) . '/../bower_components/Aura.Autoload/src/Loader.php');
-require_once(dirname(__FILE__) . '/../bower_components/Aura.Autoload/autoload.php');
-
-$loader     = new \Aura\Autoload\Loader();
-$loader->addPrefix('Symfony\Component\Console', dirname(__FILE__) . '/../bower_components/console');
-$loader->addPrefix('ColorThief', dirname(__FILE__) . '/../bower_components/color-thief-php/lib/ColorThief');
-$loader->addPrefix('Faviconr', dirname(__FILE__));
-$loader->register();
+require_once(dirname(__FILE__) . '/autoload.php');
 
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Input\InputArgument;

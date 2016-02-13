@@ -1,4 +1,13 @@
 <?php
+/**
+ * This file is part of the Audoc package.
+ *
+ * (c) Tony Bogdanov <support@tonybogdanov.com>
+ *
+ * For the full copyright and license information, please view the LICENSE.txt
+ * file that was distributed with this source code.
+ */
+
 function scan($path, $root = null) {
     if(!isset($root)) {
         $root       = $path;
@@ -36,7 +45,7 @@ $phar               = new Phar('build/faviconr.phar');
 
 foreach($paths as $path) {
     foreach(scan($path) as $absolute => $relative) {
-        $phar->addFile($absolute, $path . '/' . $relative);
+        $phar->addFromString($path . '/' . $relative, php_strip_whitespace($absolute));
     }
 }
 
@@ -48,7 +57,7 @@ $phar->delete('bower_components/console/LICENSE');
 $phar->delete('bower_components/console/README.md');
 $phar->delete('bower_components/console/phpunit.xml.dist');
 
-$phar->addFile('bower_components/Aura.Autoload/autoload.php', 'bower_components/Aura.Autoload/autoload.php');
+$phar->addFromString('bower_components/Aura.Autoload/autoload.php', php_strip_whitespace('bower_components/Aura.Autoload/autoload.php'));
 $phar->addFromString('index.php', '<' . '?php' . PHP_EOL . 'require_once(dirname(__FILE__) . \'/src/cli.php\');');
 $phar->compressFiles(Phar::GZ);
 
