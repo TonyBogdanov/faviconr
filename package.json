@@ -1,0 +1,19 @@
+{
+  "name": "faviconr",
+  "version": "1.0.0",
+  "description": "Favicon generation and integration tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyBogdanov/faviconr.git"
+  },
+  "author": "Tony Bogdanov <tonybogdanov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TonyBogdanov/faviconr/issues"
+  },
+  "homepage": "https://github.com/TonyBogdanov/faviconr#readme"
+}
