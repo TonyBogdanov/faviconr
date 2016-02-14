@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-echo %cd%
+var shell   = require("shelljs");
+
+shell.exec('echo %cd%');
