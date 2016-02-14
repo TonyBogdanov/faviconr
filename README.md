@@ -16,6 +16,12 @@ Currently supports:
 
 ## Installing
 
+### Using [NPM](http://npmjs.org)
+
+```shell
+npm install --save TonyBogdanov/faviconr
+```
+
 ### Using [Bower](http://bower.io/)
 
 ```shell
@@ -62,3 +68,27 @@ Keep in mind that any relative paths you set in the `faviconr.json` file will be
 you run the `generate` command, NOT to the directory where the `faviconr.json` file is located.
 
 As a recommendation you should always run the commands in the directory of `faviconr.json` or use absolute paths.
+
+## Running as a NodeJS script
+
+Say you've installed Faviconr to your project as a NPM dependency. Now you can simply add:
+
+```json
+"favicons": "cd build/faviconr & faviconr generate -vv"
+```
+
+to your `package.json` file to automate the favicon generation even further.
+
+Now you will have a NPM script called `favicons`, which you can run via:
+
+```shell
+npm run favicons
+```
+
+When run, the console will `cd` to the `build/faviconr` directory and execute the `faviconr generate -vv` command.
+In this example we assume you have a `faviconr.json` file in `build/faviconr`.
+
+As far as `faviconr` is concerned, `build/faviconr` will also be the current working directory.
+
+The path we `cd` into must be relative to where your `package.json` file is located. NodeJS makes it easier by always
+running from the directory of your `package.json`, which means you can run `npm run favicons` even from a sub-directory.
