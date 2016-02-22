@@ -4,7 +4,7 @@
     "Tony Bogdanov <tonybogdanov@gmail.com>"
   ],
   "description": "Favicon generation and integration tool",
-  "main": "faviconr.phar",
+  "main": "build/faviconr.phar",
   "moduleType": [],
   "license": "MIT",
   "homepage": "",

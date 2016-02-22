@@ -14,6 +14,10 @@ Currently supports:
 - Automated generation via options saved in a `faviconr.json` file
 - Wizard for interactive generation of a `faviconr.json` file
 
+## Requirements
+
+- PHP 5.5 or later with the `php` command globally available in the console.
+
 ## Installing
 
 ### Using [NPM](http://npmjs.org)
