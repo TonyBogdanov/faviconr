@@ -149,13 +149,19 @@ class Faviconr
 
         $this->log('Crop source image to ' . $cropWidth . 'x' . $cropHeight, 2);
         $crop               = @imagecreatetruecolor($cropWidth, $cropHeight);
+        @imagealphablending($crop, false);
+        @imagefill($crop, 0, 0, imagecolorallocatealpha($crop, 255, 255, 255, 127));
+        @imagealphablending($crop, true);
+        @imagesavealpha($crop, true);
         @imagecopyresampled($crop, $this->gd, 0, 0, round(($width - $cropWidth) / 2),
             round(($height - $cropHeight) / 2), $cropWidth, $cropHeight, $cropWidth, $cropHeight);
 
         $this->log('Create empty image ' . $tarWidth . 'x' . $tarHeight, 2);
         $image              = @imagecreatetruecolor($tarWidth, $tarHeight);
+        @imagealphablending($image, false);
+        @imagefill($image, 0, 0, imagecolorallocatealpha($image, 255, 255, 255, 127));
+        @imagealphablending($image, true);
         @imagesavealpha($image, true);
-        @imagefill($image, 0, 0, imagecolorallocatealpha($image, 0, 0, 0, 127));
 
         $this->log('Resize cropped image to ' . $tarWidth . 'x' . $tarHeight, 2);
         @imagecopyresampled($image, $crop, 0, 0, 0, 0, $tarWidth, $tarHeight, $cropWidth, $cropHeight);
