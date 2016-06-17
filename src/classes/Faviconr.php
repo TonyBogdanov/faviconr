@@ -519,6 +519,9 @@ MAN_CONTENT;
         if(false === $content) {
             throw new InvalidPathException(sprintf('Could not read <info>%s</info>.', $absolute));
         }
+		
+		// Invalid HTML, sorry Safari
+		// <link rel="mask-icon" href="{$url}safari-pinned-tab.svg" color="${color}">
 
         $definition         = <<<DEFINITION
 <link rel="apple-touch-icon" sizes="57x57" href="{$url}apple-touch-icon-57x57.png">
@@ -535,7 +538,7 @@ MAN_CONTENT;
 <link rel="icon" type="image/png" href="{$url}favicon-96x96.png" sizes="96x96">
 <link rel="icon" type="image/png" href="{$url}favicon-16x16.png" sizes="16x16">
 <link rel="manifest" href="{$url}manifest.json">
-<link rel="mask-icon" href="{$url}safari-pinned-tab.svg" color="${color}">
+<link rel="mask-icon" href="{$url}safari-pinned-tab.svg">
 <link rel="shortcut icon" href="{$url}favicon.ico">
 <meta name="msapplication-TileColor" content="${color}">
 <meta name="msapplication-TileImage" content="{$url}mstile-144x144.png">
